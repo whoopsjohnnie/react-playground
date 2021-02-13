@@ -59,26 +59,26 @@ const styles = theme => ({
 	},
 
 	drawer: {
-		[theme.breakpoints.up('sm')]: {
-			width: drawerWidth1,
-			flexShrink: 0,
-		},
-		[theme.breakpoints.up('md')]: {
-			width: drawerWidth2,
-			flexShrink: 0,
-		},
+		// [theme.breakpoints.up('sm')]: {
+		// width: drawerWidth1,
+		// flexShrink: 0,
+		// },
+		// [theme.breakpoints.up('md')]: {
+		width: drawerWidth2,
+		flexShrink: 0,
+		// },
 	},
 
 	appBar: {
 		zIndex: theme.zIndex.drawer + 1,
-		[theme.breakpoints.up('sm')]: {
-			width: `calc(100% - ${drawerWidth1}px)`,
-			marginLeft: drawerWidth1,
-		},
-		[theme.breakpoints.up('md')]: {
-			width: `calc(100% - ${drawerWidth2}px)`,
-			marginLeft: drawerWidth2,
-		},
+		// [theme.breakpoints.up('sm')]: {
+		// 	width: `calc(100% - ${drawerWidth1}px)`,
+		// 	marginLeft: drawerWidth1,
+		// },
+		// [theme.breakpoints.up('md')]: {
+		// 	width: `calc(100% - ${drawerWidth2}px)`,
+		// 	marginLeft: drawerWidth2,
+		// },
 	},
 
 	menuButton: {
@@ -136,13 +136,15 @@ const styles = theme => ({
 	toolbar: theme.mixins.toolbar,
 	drawerPaper: {
 		position: "relative",
-		// width: drawerWidth2,
-		[theme.breakpoints.up('sm')]: {
-			width: drawerWidth1,
-		},
-		[theme.breakpoints.up('md')]: {
-			width: drawerWidth2,
-		},
+		// // width: drawerWidth2,
+		// [theme.breakpoints.up('sm')]: {
+		// 	width: drawerWidth1,
+		// },
+		// [theme.breakpoints.up('md')]: {
+		// 	width: drawerWidth2,
+		// },
+		width: drawerWidth1,
+		overflowX: "hidden"
 	},
 
 	content: {
@@ -220,28 +222,40 @@ const AppDrawer = withStyles(styles)(function({ classes, variant, open, onClose,
 					open={open}
 					onClose={handleDrawerToggle}
 					classes={{
-						paper: classes.drawerPaper,
+						paper: classes.drawer,
 					}}
 					ModalProps={{
 						keepMounted: true, // Better open performance on mobile.
 					}} >
+					<Container 
+						style={{minHeight: 64}}
+						>
+					</Container>
 					<Container>
 						<h1 style={{display: 'none'}}>"Name"</h1>
 						<h2 style={{display: 'none'}}>"Title"</h2>
 						<p style={{display: 'none'}}>"Description"</p>
 					</Container>
+					<Divider />
 					<List>
-						<Divider style={{display: 'none'}}/>
 						<ListItem 
 							button 
 							component={Link} 
 							to="/" 
 							// onClick={onItemClick(title)}
 							>
-							<ListItemIcon><GrainIcon/></ListItemIcon>
-							<ListItemText>Home</ListItemText>
+							<ListItemIcon title="First"><GrainIcon/></ListItemIcon>
+							<ListItemText>First</ListItemText>
 						</ListItem>
-						<Divider style={{display: 'none'}}/>
+						<ListItem 
+							button 
+							component={Link} 
+							to="/" 
+							// onClick={onItemClick(title)}
+							>
+							<ListItemIcon title="Second"><GrainIcon/></ListItemIcon>
+							<ListItemText>Second</ListItemText>
+						</ListItem>
 					</List>
 				</Drawer>
 			</Hidden>
@@ -257,23 +271,35 @@ const AppDrawer = withStyles(styles)(function({ classes, variant, open, onClose,
 							[classes.toolbarMargin]: variant === 'persistent'
 						})}
 					/>
+					<Container 
+						style={{minHeight: 64}}
+						>
+					</Container>
 					<Container>
 						<h1 style={{display: 'none'}}>"Name"</h1>
 						<h2 style={{display: 'none'}}>"Title"</h2>
 						<p style={{display: 'none'}}>"Description"</p>
 					</Container>
+					<Divider />
 					<List>
-						<Divider style={{display: 'none'}}/>
 						<ListItem 
 							button 
 							component={Link} 
 							to="/" 
 							// onClick={onItemClick(title)}
 							>
-							<ListItemIcon><GrainIcon/></ListItemIcon>
-							<ListItemText>Home</ListItemText>
+							<ListItemIcon title="First"><GrainIcon/></ListItemIcon>
+							<ListItemText>First</ListItemText>
 						</ListItem>
-						<Divider style={{display: 'none'}}/>
+						<ListItem 
+							button 
+							component={Link} 
+							to="/" 
+							// onClick={onItemClick(title)}
+							>
+							<ListItemIcon title="Second"><GrainIcon/></ListItemIcon>
+							<ListItemText>Second</ListItemText>
+						</ListItem>
 					</List>
 				</Drawer>
 			</Hidden>
