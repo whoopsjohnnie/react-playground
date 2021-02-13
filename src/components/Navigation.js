@@ -14,7 +14,7 @@ import {
 	Route,
 	Link,
 	useRouteMatch
-  } from "react-router-dom";
+	} from "react-router-dom";
 
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -48,41 +48,46 @@ const drawerWidth1 = 73;
 const drawerWidth2 = 240;
 
 const styles = theme => ({
+
 	root: {
 		display: 'flex',
 		flexGrow: 1
 	},
+
 	flex: {
 		flex: 1
 	},
+
 	drawer: {
-	  [theme.breakpoints.up('sm')]: {
-		width: drawerWidth1,
-		flexShrink: 0,
-	  },
-	  [theme.breakpoints.up('md')]: {
-		  width: drawerWidth2,
-		  flexShrink: 0,
+		[theme.breakpoints.up('sm')]: {
+			width: drawerWidth1,
+			flexShrink: 0,
+		},
+		[theme.breakpoints.up('md')]: {
+			width: drawerWidth2,
+			flexShrink: 0,
 		},
 	},
+
 	appBar: {
 		zIndex: theme.zIndex.drawer + 1,
-	  [theme.breakpoints.up('sm')]: {
-		width: `calc(100% - ${drawerWidth1}px)`,
-		marginLeft: drawerWidth1,
-	  },
-	  [theme.breakpoints.up('md')]: {
-		  width: `calc(100% - ${drawerWidth2}px)`,
-		  marginLeft: drawerWidth2,
+		[theme.breakpoints.up('sm')]: {
+			width: `calc(100% - ${drawerWidth1}px)`,
+			marginLeft: drawerWidth1,
+		},
+		[theme.breakpoints.up('md')]: {
+			width: `calc(100% - ${drawerWidth2}px)`,
+			marginLeft: drawerWidth2,
 		},
 	},
+
 	menuButton: {
-	  marginRight: theme.spacing(2),
-	  [theme.breakpoints.up('sm')]: {
-		// display: 'none',
-	  },
-	  [theme.breakpoints.up('md')]: {
-		  // display: 'none',
+		marginRight: theme.spacing(2),
+		[theme.breakpoints.up('sm')]: {
+			// display: 'none',
+		},
+		[theme.breakpoints.up('md')]: {
+			// display: 'none',
 		},
 	},
 
@@ -91,17 +96,18 @@ const styles = theme => ({
 		borderRadius: theme.shape.borderRadius,
 		backgroundColor: fade(theme.palette.common.white, 0.15),
 		'&:hover': {
-		  backgroundColor: fade(theme.palette.common.white, 0.25),
+			backgroundColor: fade(theme.palette.common.white, 0.25),
 		},
 		marginRight: theme.spacing(2),
 		marginLeft: 0,
 		width: '100%',
 		[theme.breakpoints.up('sm')]: {
-		  marginLeft: theme.spacing(3),
-		  width: 'auto',
+			marginLeft: theme.spacing(3),
+			width: 'auto',
 		},
-	  },
-	  searchIcon: {
+	},
+
+	searchIcon: {
 		padding: theme.spacing(0, 2),
 		height: '100%',
 		position: 'absolute',
@@ -109,41 +115,45 @@ const styles = theme => ({
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center',
-	  },
-	  inputRoot: {
+	},
+
+	inputRoot: {
 		color: 'inherit',
-	  },
-	  inputInput: {
+	},
+
+	inputInput: {
 		padding: theme.spacing(1, 1, 1, 0),
 		// vertical padding + font size from searchIcon
 		paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
 		transition: theme.transitions.create('width'),
 		width: '100%',
-		[theme.breakpoints.up('md')]: {
-		  width: '20ch',
+			[theme.breakpoints.up('md')]: {
+			width: '20ch',
 		},
-	  },
+	},
 
 	// necessary for content to be below app bar
 	toolbar: theme.mixins.toolbar,
 	drawerPaper: {
 		position: "relative",
-	  // width: drawerWidth2,
-	  [theme.breakpoints.up('sm')]: {
-		  width: drawerWidth1,
+		// width: drawerWidth2,
+		[theme.breakpoints.up('sm')]: {
+			width: drawerWidth1,
 		},
 		[theme.breakpoints.up('md')]: {
-		  width: drawerWidth2,
-		  },
+			width: drawerWidth2,
+		},
 	},
+
 	content: {
-	  flexGrow: 1,
-	  padding: 0, // theme.spacing(3),
-	  position: 'relative',
-	  top: '64px'
+		flexGrow: 1,
+		padding: 0, // theme.spacing(3),
+		position: 'relative',
+		top: '64px'
 	},
-  // }));
-  });
+
+// }));
+});
 
 const AppToolbar = withStyles(styles)(function({ classes, title, open, onMenuClick, onDrawerToggle }) {
 
