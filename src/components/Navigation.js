@@ -29,9 +29,11 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import GrainIcon from '@material-ui/icons/Grain';
-import ExtensionIcon from '@material-ui/icons/Extension';
-import PlayCircleFilled from '@material-ui/icons/PlayCircleFilled';
+// import GrainIcon from '@material-ui/icons/Grain';
+// import ExtensionIcon from '@material-ui/icons/Extension';
+// import PlayCircleFilled from '@material-ui/icons/PlayCircleFilled';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import DataUsageIcon from '@material-ui/icons/DataUsage';
 import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
 
@@ -256,8 +258,8 @@ const AppDrawer = withStyles(styles)(function({ classes, variant, open, onClose,
 							to="/" 
 							// onClick={onItemClick(title)}
 							>
-							<ListItemIcon title="First"><GrainIcon/></ListItemIcon>
-							<ListItemText>First</ListItemText>
+							<ListItemIcon title="Dashboard"><DashboardIcon/></ListItemIcon>
+							<ListItemText>Dashboard</ListItemText>
 						</ListItem>
 						<ListItem 
 							button 
@@ -265,8 +267,8 @@ const AppDrawer = withStyles(styles)(function({ classes, variant, open, onClose,
 							to="/" 
 							// onClick={onItemClick(title)}
 							>
-							<ListItemIcon title="Second"><GrainIcon/></ListItemIcon>
-							<ListItemText>Second</ListItemText>
+							<ListItemIcon title="Dashboard"><DataUsageIcon/></ListItemIcon>
+							<ListItemText>Dashboard</ListItemText>
 						</ListItem>
 					</List>
 				</Drawer>
@@ -300,17 +302,17 @@ const AppDrawer = withStyles(styles)(function({ classes, variant, open, onClose,
 							to="/" 
 							// onClick={onItemClick(title)}
 							>
-							<ListItemIcon title="First"><GrainIcon/></ListItemIcon>
-							<ListItemText>First</ListItemText>
+							<ListItemIcon title="Dashboard"><DashboardIcon/></ListItemIcon>
+							<ListItemText>Dashboard</ListItemText>
 						</ListItem>
 						<ListItem 
 							button 
 							component={Link} 
-							to="/" 
+							to="/dashboard" 
 							// onClick={onItemClick(title)}
 							>
-							<ListItemIcon title="Second"><GrainIcon/></ListItemIcon>
-							<ListItemText>Second</ListItemText>
+							<ListItemIcon title="Dashboard"><DataUsageIcon/></ListItemIcon>
+							<ListItemText>Dashboard</ListItemText>
 						</ListItem>
 					</List>
 				</Drawer>
@@ -328,7 +330,15 @@ const AppDrawer = withStyles(styles)(function({ classes, variant, open, onClose,
 							<Dashboard />
 							</>
 					} />
-
+				<Route 
+					exact 
+					path="/dashboard" 
+					render={
+						(props) => 
+							<>
+							<Dashboard />
+							</>
+					} />
 				</Switch>
 				</div>
 			</main>
