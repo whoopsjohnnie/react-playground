@@ -39,6 +39,8 @@ import InputBase from '@material-ui/core/InputBase';
 import ComputerIcon from '@material-ui/icons/Computer';
 import CodeIcon from '@material-ui/icons/Code';
 
+import Dashboard from './Dashboard'
+
 // import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { fade, makeStyles, useTheme } from '@material-ui/core/styles';
 
@@ -59,9 +61,20 @@ const styles = theme => ({
 	},
 
 	drawer: {
+		[theme.breakpoints.up('sm')]: {
+			width: drawerWidth1,
+			flexShrink: 0,
+		},
+		[theme.breakpoints.up('md')]: {
+			width: drawerWidth1,
+			flexShrink: 0,
+		},
+	},
+
+	drawerFull: {
 		// [theme.breakpoints.up('sm')]: {
-		// width: drawerWidth1,
-		// flexShrink: 0,
+		// 	width: drawerWidth1,
+		// 	flexShrink: 0,
 		// },
 		// [theme.breakpoints.up('md')]: {
 		width: drawerWidth2,
@@ -154,7 +167,6 @@ const styles = theme => ({
 		top: '64px'
 	},
 
-// }));
 });
 
 const AppToolbar = withStyles(styles)(function({ classes, title, open, onMenuClick, onDrawerToggle }) {
@@ -222,7 +234,7 @@ const AppDrawer = withStyles(styles)(function({ classes, variant, open, onClose,
 					open={open}
 					onClose={handleDrawerToggle}
 					classes={{
-						paper: classes.drawer,
+						paper: classes.drawerFull,
 					}}
 					ModalProps={{
 						keepMounted: true, // Better open performance on mobile.
@@ -313,6 +325,7 @@ const AppDrawer = withStyles(styles)(function({ classes, variant, open, onClose,
 					render={
 						(props) => 
 							<>
+							<Dashboard />
 							</>
 					} />
 
