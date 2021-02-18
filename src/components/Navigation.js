@@ -34,6 +34,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 // import PlayCircleFilled from '@material-ui/icons/PlayCircleFilled';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import DataUsageIcon from '@material-ui/icons/DataUsage';
+import TimelineIcon from '@material-ui/icons/Timeline';
 import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
 
@@ -42,6 +43,7 @@ import ComputerIcon from '@material-ui/icons/Computer';
 import CodeIcon from '@material-ui/icons/Code';
 
 import Dashboard from './Dashboard'
+import Timeline from './Timeline'
 
 // import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { fade, makeStyles, useTheme } from '@material-ui/core/styles';
@@ -270,6 +272,15 @@ const AppDrawer = withStyles(styles)(function({ classes, variant, open, onClose,
 							<ListItemIcon title="Dashboard"><DataUsageIcon/></ListItemIcon>
 							<ListItemText>Dashboard</ListItemText>
 						</ListItem>
+						<ListItem 
+							button 
+							component={Link} 
+							to="/timeline" 
+							// onClick={onItemClick(title)}
+							>
+							<ListItemIcon title="Builds"><TimelineIcon/></ListItemIcon>
+							<ListItemText>Builds</ListItemText>
+						</ListItem>
 					</List>
 				</Drawer>
 			</Hidden>
@@ -314,6 +325,15 @@ const AppDrawer = withStyles(styles)(function({ classes, variant, open, onClose,
 							<ListItemIcon title="Dashboard"><DataUsageIcon/></ListItemIcon>
 							<ListItemText>Dashboard</ListItemText>
 						</ListItem>
+						<ListItem 
+							button 
+							component={Link} 
+							to="/timeline" 
+							// onClick={onItemClick(title)}
+							>
+							<ListItemIcon title="Builds"><TimelineIcon/></ListItemIcon>
+							<ListItemText>Builds</ListItemText>
+						</ListItem>
 					</List>
 				</Drawer>
 			</Hidden>
@@ -337,6 +357,15 @@ const AppDrawer = withStyles(styles)(function({ classes, variant, open, onClose,
 						(props) => 
 							<>
 							<Dashboard />
+							</>
+					} />
+				<Route 
+					exact 
+					path="/timeline" 
+					render={
+						(props) => 
+							<>
+							<Timeline />
 							</>
 					} />
 				</Switch>
