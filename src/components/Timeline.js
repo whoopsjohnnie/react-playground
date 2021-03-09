@@ -189,11 +189,11 @@ const TimelineMini = (props) => (
                     </div>
                     { /* Content */}
                     <p className="text-inverse mb-1">
-                        
+                        { props.content }
                     </p>
                     { /* Date */}
                     <p>
-                        
+                        { props.date }
                     </p>
                 </div>
             </div>
@@ -423,7 +423,7 @@ class Timeline extends Component {
 
                 <Grid 
 					item 
-					xs={3}
+					xs={8}
 					>
                     <Card className="">
 					    <CardContent>
@@ -432,37 +432,47 @@ class Timeline extends Component {
                             </h6>
                             <TimelineMini 
                                 showPillDate
-                                    pillDate="2 Days ago"
+                                pillDate="2 Days ago"
                                 icon="times-circle"
-                                    iconClassName="text-danger"
+                                iconClassName="text-danger"
                                 badgeTitle="Alert"
-                                    badgeColor="danger"
+                                badgeColor="danger"
+                                content="Public-key secondary encryption"
+                                date="Thu Jan 21 2021 22:56:25 GMT-0800 (PST)"
                             />
                             <TimelineMini 
                                 icon="question-circle"
-                                    iconClassName="text-warning"
+                                iconClassName="text-warning"
                                 badgeTitle="Warning"
-                                    badgeColor="warning"
+                                badgeColor="warning"
+                                content="Public-key secondary encryption"
+                                date="Thu Jan 21 2021 22:56:25 GMT-0800 (PST)"
                             />
                             <TimelineMini 
                                 icon="info-circle"
-                                    iconClassName="text-info"
+                                iconClassName="text-info"
                                 badgeTitle="Info"
-                                    badgeColor="info"
+                                badgeColor="info"
+                                content="Public-key secondary encryption"
+                                date="Thu Jan 21 2021 22:56:25 GMT-0800 (PST)"
                             />
                             <TimelineMini 
                                 showPillDate
-                                    pillDate="Yesterday"
+                                pillDate="Yesterday"
                                 icon="plus-circle"
-                                    iconClassName="text-primary"
+                                iconClassName="text-primary"
                                 badgeTitle="Message"
-                                    badgeColor="primary"
+                                badgeColor="primary"
+                                content="Public-key secondary encryption"
+                                date="Thu Jan 21 2021 22:56:25 GMT-0800 (PST)"
                             />
                             <TimelineMini 
                                 icon="check-circle"
-                                    iconClassName="text-success"
+                                iconClassName="text-success"
                                 badgeTitle="Success"
-                                    badgeColor="success"
+                                badgeColor="success"
+                                content="Public-key secondary encryption"
+                                date="Thu Jan 21 2021 22:56:25 GMT-0800 (PST)"
                         />
                             <TimelineMini 
                                 icon="circle"
@@ -480,64 +490,7 @@ class Timeline extends Component {
 
                 <Grid 
 					item 
-					xs={3}
-					>
-                    <Card className="">
-                        <CardContent>
-                            <h6>
-                                Timeline Default
-                            </h6>
-                            <TimelineDefault 
-                                showPillDate
-                                    pillDate="2 Days ago"
-                                icon="times-circle"
-                                    iconClassName="text-danger"
-                                badgeTitle="Alert"
-                                    badgeColor="danger"
-                            />
-                            <TimelineDefault 
-                                icon="question-circle"
-                                    iconClassName="text-warning"
-                                badgeTitle="Warning"
-                                    badgeColor="warning"
-                            />
-                            <TimelineDefault 
-                                icon="info-circle"
-                                    iconClassName="text-info"
-                                badgeTitle="Info"
-                                    badgeColor="info"
-                            />
-                            <TimelineDefault 
-                                showPillDate
-                                    pillDate="Yesterday"
-                                icon="plus-circle"
-                                    iconClassName="text-primary"
-                                badgeTitle="Message"
-                                    badgeColor="primary"
-                            />
-                            <TimelineDefault 
-                                icon="check-circle"
-                                    iconClassName="text-success"
-                                badgeTitle="Success"
-                                    badgeColor="success"
-                            />
-                            <TimelineDefault 
-                                icon="circle"
-                                badgeTitle="Obsolete"
-                            />
-                        </CardContent>
-                        <ListGroup flush>
-                            <ListGroupItem action tag={ Link } to="/pages/timeline" className="text-center">
-                                Timeline Details
-                                <i className="fa fa-angle-right ml-2"></i>
-                            </ListGroupItem>
-                        </ListGroup>
-                    </Card>
-                </Grid>
-
-                <Grid 
-					item 
-					xs={3}
+					xs={4}
 					>
                     <Card className="">
                         <CardContent>

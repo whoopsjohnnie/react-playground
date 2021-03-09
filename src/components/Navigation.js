@@ -35,6 +35,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import DataUsageIcon from '@material-ui/icons/DataUsage';
 import TimelineIcon from '@material-ui/icons/Timeline';
+import AccountTreeIcon from '@material-ui/icons/AccountTree';
+
 import Divider from '@material-ui/core/Divider';
 import Container from '@material-ui/core/Container';
 
@@ -44,6 +46,7 @@ import CodeIcon from '@material-ui/icons/Code';
 
 import Dashboard from './Dashboard'
 import Timeline from './Timeline'
+import Explorer from './Explorer'
 
 // import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { fade, makeStyles, useTheme } from '@material-ui/core/styles';
@@ -281,6 +284,17 @@ const AppDrawer = withStyles(styles)(function({ classes, variant, open, onClose,
 							<ListItemIcon title="Builds"><TimelineIcon/></ListItemIcon>
 							<ListItemText>Builds</ListItemText>
 						</ListItem>
+
+						<ListItem 
+							button 
+							component={Link} 
+							to="/explore" 
+							// onClick={onItemClick(title)}
+							>
+							<ListItemIcon title="Explore"><AccountTreeIcon/></ListItemIcon>
+							<ListItemText>Explore</ListItemText>
+						</ListItem>
+
 					</List>
 				</Drawer>
 			</Hidden>
@@ -334,6 +348,17 @@ const AppDrawer = withStyles(styles)(function({ classes, variant, open, onClose,
 							<ListItemIcon title="Builds"><TimelineIcon/></ListItemIcon>
 							<ListItemText>Builds</ListItemText>
 						</ListItem>
+
+						<ListItem 
+							button 
+							component={Link} 
+							to="/explore" 
+							// onClick={onItemClick(title)}
+							>
+							<ListItemIcon title="Explore"><AccountTreeIcon/></ListItemIcon>
+							<ListItemText>Explore</ListItemText>
+						</ListItem>
+
 					</List>
 				</Drawer>
 			</Hidden>
@@ -366,6 +391,15 @@ const AppDrawer = withStyles(styles)(function({ classes, variant, open, onClose,
 						(props) => 
 							<>
 							<Timeline />
+							</>
+					} />
+				<Route 
+					exact 
+					path="/explore" 
+					render={
+						(props) => 
+							<>
+							<Explorer />
 							</>
 					} />
 				</Switch>
